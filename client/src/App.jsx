@@ -14,12 +14,18 @@ const apiKey = 'v6d82jj3upf5';
 //STEP:  Creating a Stream object
 const client = StreamChat.getInstance(apiKey);
 
+const authToken = false;
+
 const App = () => {
+
+  if(!authToken){
+    return <Auth />
+  }
+
   return (
     <div className="app__wrapper">
 
       {/* Rendering the CHAT application */}
-
         <Chat client={client} theme="team light">
 
           {/* All the below mentioned are components that are created separately*/}
